@@ -106,7 +106,7 @@
             <!-- Watch Item 1 -->
             <div class="catalog-card-item">
                 <div class="item-img">
-                    <img src="images/rolex-sub.jpg" alt="Rolex Submariner">
+                    <img src="images/Rectangle 33.png" alt="Rolex Submariner">
                 </div>
                 <h3 class="item-title">Rolex Submariner</h3>
                 <p class="item-price">4500 DH</p>

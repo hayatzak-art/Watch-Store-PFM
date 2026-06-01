@@ -100,5 +100,4 @@
         <a href="products.php" class="btn-gold">Découvrir la collection</a>
     </div>
 </section>
-
-<?php include 'includes/footer.php'; ?>
+<?php include __DIR__ . '/includes/footer.php'; ?>

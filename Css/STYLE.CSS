@@ -1,58 +1,334 @@
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial,sans-serif;
+/* --- Reset Global --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
 }
 
-body{
-background:#f5f5f5;
+body {
+    background-color: #FDFDFD;
+    color: #222222;
+    overflow-x: hidden;
 }
 
-.navbar{
-background:#000;
-padding:15px 50px;
-display:flex;
-justify-content:space-between;
-align-items:center;
+/* --- HEADER / NAVIGATION --- */
+.main-header {
+    background-color: #0F0F0F; /* Fond Noir Luxe */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 6%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #222222;
 }
 
-.logo{
-color:#fff;
-font-weight:bold;
-font-size:22px;
+.main-header .logo {
+    color: #FFFFFF;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: bold;
+    letter-spacing: 3px;
 }
 
-.navbar ul{
-display:flex;
-list-style:none;
-gap:25px;
+.navbar a {
+    color: #AAAAAA;
+    text-decoration: none;
+    margin: 0 18px;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: color 0.3s;
 }
 
-.navbar a{
-color:white;
-text-decoration:none;
+.navbar a:hover, .navbar a.active {
+    color: #D4AF37; /* Code Couleur Figma Gold */
 }
 
-.hero{
-height:500px;
-background:url('../images/hero-watch.jpg');
-background-size:cover;
-background-position:center;
-display:flex;
-align-items:center;
-padding-left:80px;
-color:white;
+.header-icons a {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 1.1rem;
+    margin-left: 20px;
+    position: relative;
 }
 
-.hero h1{
-font-size:60px;
+.cart-count {
+    background-color: #D4AF37;
+    color: #000000;
+    font-size: 0.7rem;
+    padding: 2px 6px;
+    border-radius: 50%;
+    position: absolute;
+    top: -10px;
+    right: -12px;
+    font-weight: bold;
 }
 
-.btn{
-background:#d4a437;
-padding:12px 25px;
-border:none;
-margin-top:20px;
-cursor:pointer;
+/* --- HERO SECTION --- */
+.hero {
+    height: 75vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.75)), url('images/hero-bg.jpg') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    padding: 0 8%;
+}
+
+.hero-content {
+    max-width: 600px;
+}
+
+.hero-content h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.8rem;
+    color: #FFFFFF;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+.hero-content p {
+    color: #DDDDDD;
+    font-size: 1.1rem;
+    margin-bottom: 35px;
+    font-weight: 300;
+}
+
+.btn-gold {
+    display: inline-block;
+    background-color: #D4AF37;
+    color: #000000;
+    padding: 14px 32px;
+    text-decoration: none;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.btn-gold:hover {
+    background-color: #B89428;
+    transform: translateY(-3px);
+}
+
+/* --- SECTIONS TITLES --- */
+.section-title {
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+    margin: 50px 0 30px 0;
+    color: #111111;
+    position: relative;
+}
+
+/* --- GRID CATEGORIES --- */
+.categories-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 0 6%;
+}
+
+.category-card {
+    position: relative;
+    height: 260px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.category-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.category-card:hover img {
+    transform: scale(1.06);
+}
+
+.category-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.25);
+    display: flex;
+    align-items: flex-end;
+    padding: 20px;
+}
+
+.category-overlay span {
+    color: #FFFFFF;
+    background-color: #000000;
+    padding: 6px 16px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+/* --- MONTRES POPULAIRES --- */
+.popular-section {
+    padding: 50px 6%;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #EEEEEE;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+}
+
+.section-header .section-title {
+    margin: 0;
+}
+
+.view-all {
+    color: #D4AF37;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: color 0.2s;
+}
+
+.view-all:hover {
+    color: #000000;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.product-card {
+    background-color: #FFFFFF;
+    border: 1px solid #F0F0F0;
+    padding: 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.06);
+}
+
+.product-img-container {
+    height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.product-img-container img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.product-info h3 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #333333;
+    margin-bottom: 6px;
+}
+
+.rating {
+    color: #FFB400;
+    font-size: 0.8rem;
+    margin-bottom: 8px;
+}
+
+.rating span {
+    color: #999999;
+    margin-left: 4px;
+}
+
+.price {
+    font-weight: 700;
+    color: #111111;
+    font-size: 1.05rem;
+}
+
+/* --- BANNER NOUVELLE COLLECTION --- */
+.collection-banner {
+    height: 45vh;
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('images/banner-collection.jpg') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    padding: 0 6%;
+    margin-top: 40px;
+    color: #FFFFFF;
+}
+
+.banner-content .subtitle {
+    color: #D4AF37;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+.banner-content h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.4rem;
+    margin: 12px 0 25px 0;
+    letter-spacing: 2px;
+}
+
+/* --- FOOTER & BRANDS --- */
+.main-footer {
+    background-color: #0F0F0F;
+    color: #FFFFFF;
+    padding: 50px 6% 20px 6%;
+    margin-top: 60px;
+}
+
+.brands-section {
+    text-align: center;
+    border-bottom: 1px solid #222222;
+    padding-bottom: 40px;
+}
+
+.footer-title {
+    font-size: 1.1rem;
+    letter-spacing: 3px;
+    margin-bottom: 30px;
+    color: #FFFFFF;
+}
+
+.brands-logos {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.brand-item span {
+    font-size: 1.2rem;
+    font-family: 'Playfair Display', serif;
+    font-weight: bold;
+    color: #555555;
+    letter-spacing: 2px;
+    transition: color 0.3s;
+    cursor: pointer;
+}
+
+.brand-item:hover span {
+    color: #D4AF37;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 25px;
+    font-size: 0.8rem;
+    color: #777777;
 }
